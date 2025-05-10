@@ -122,6 +122,12 @@ The Thinkpad X301 is a laptop released in 2008 by Lenovo as a technical update t
 
 The machine is configured to multi-boot to DOS 6.22, Windows XP and Lubuntu. 
 
+## 8. [Pocket386](laptops/pocket386) (2024)
+
+This is a new 386-based subnotebook released in 2024. It runs on DOS 6.22 and Windows for Workgroups (WFW) 3.11.
+
+<img src="laptops/pocket386/photos/pocket386.jpg" width="600">
+
 # Virtual Machines
 
 Not exactly retro PCs but I just wanted to store the settings I use for my virtual playgrounds. This is typically for me to do quick and dirty testing without powering up my actual retro-PCs.
@@ -249,6 +255,7 @@ In Windows 98SE
 23. [SC55 Soundfont](https://github.com/trevor0402/SC55Soundfont)
 24. [Via 4in1 drivers](https://theretroweb.com/chipsets/670)
 25. [Novell Netware DOS client](https://community.microfocus.com/img/oes/w/tips/34501/netware-dos-client)
+26. [AdlibW](https://archive.org/details/ADLIBW_ZIP).
 
 # Common software sources
 
