@@ -1,5 +1,5 @@
 
-Universal PnP Sound Card Driver for DOS v0.81b (c) JazeFox 2019-24 (UNISOUND)
+Universal PnP Sound Card Driver for DOS v0.82a (c) JazeFox 2019-24 (UNISOUND)
 =============================================================================
 
 Index of this document:
@@ -20,7 +20,7 @@ Index of this document:
 UNISOUND is a Freeware DOS-only tool useful to configure and initialize ISA
 PnP sound cards from serveral brands and models and a few non-PnP exceptions
 (see section 3 for a full list of supported cards).
-It Works on all x86 CPUs, including 8088/8086/80286/386... 
+It Works on all x86 CPUs, including 8088/8086/80286/386... and higher)
 
 Main features:
 -----------------------------------------------------------------------------
@@ -89,6 +89,9 @@ you are supposed to know what are you doing. *Use at your own risk!!*
 This tool is FREEWARE! You can use an distribute it freely. If you paid for
 it you have been scammed!
 
+This tool can be bundled with other programs or games freely without asking
+for permission, in any media format like floppy, CD, ISO... 
+
 
 2- Usage, options and examples
 =============================================================================
@@ -151,11 +154,12 @@ Options:
    /VWnn  Set Wave Volume level to 'nn' % (00-99)
    /VFnn  Set FM/Synth/WT Volume level to 'nn' % (00-99)
    /VLnn  Set Line-in Volume level to 'nn' % (00-99)
-   /VCnn  Set CD Volume level to 'nn' (00-99)
-   /VMnn  Set Mic Volume level to 'nn' (00-99)
-   /VPnn  Set PC Speaker-in Volume level to 'nn' (00-99) (Creative)
-   /VTnn  Set Treble level to 'nn' (00-99) (Compatible cards)
-   /VBnn  Set Bass level to 'nn' (00-99) (Compatible cards)	
+   /VCnn  Set CD Volume level to 'nn' % (00-99)
+   /VMnn  Set Mic Volume level to 'nn' % (00-99)
+   /VPnn  Set PC Speaker-in Volume level to 'nn' % (00-99) (Creative)
+   /VTnn  Set Treble level to 'nn' % (00-99) (Compatible cards)
+   /VBnn  Set Bass level to 'nn' % (00-99) (Compatible cards)
+	  In ES189x cards, set AuxB (External WT) level (00-99)	
    /VRnn  Set FM Reverb amount (00-99) (SB AWE only)
    /VUnn  Set FM Chorus amount (00-99) (SB AWE only)
    /Xxxx  eXtened cards settings (see section 5 for details)
@@ -174,6 +178,12 @@ first try, it is recommended to start with UNISOUND /CL to list them
 type installed at the same time to avoid conflicts, it is possible to have
 them working if you configure them well. GUS + SB are a very good combo!).
 If you only have 1 PnP card (sound card or not), use UNISOUND as is.
+
+If you run UNISOUND and your cards is listed as "Unknown", please check
+if there are other PnP cards or onboard chips in your system that could
+be PnP (Like network cards or gameport cards), to see the list, please
+use UNISOUND /CL and then check the position of your sound card. Continue
+reading below to check the /CL examples.
 
 Help note: It is possible to free some resources on some cards (not all)
 setting a value to zero 0 (except DMA. To disable a DMA, set it to 4).
@@ -205,14 +215,15 @@ Initialization done.
 ESS Mixer [VOL:85 WAV:80 FM:80 LIN:50 CD:0 MIC:0]
 
 Ok! if the values you provided are good, the card sould work. Now if the
-master volume is too high you can use: UNISOUND /C2 /V50 for example, or
-if you don't use line-in and want to avoid input noise, use /VL00.
+master volume is too high you can use: UNISOUND /C2 /V50 for example (that
+will set the master volume to 50%), or if you don't use line-in and want 
+to avoid input noise, use /VL00.
 
 If you only want to check the current settings of a PnP card, use:
 
 UNISOUND /R (or UNISOUND /R /C2 in the ESS example we saw before).
 
-It wil work (if the card support resource reading), even if the card has
+It will work (if the card support resource reading), even if the card has
 been not initialized (will show zero or weird values), or if it has been
 initialized by other PnP tool (like ICU or CTCM) or even if it has been
 configured by a PnP BIOS.
@@ -255,13 +266,13 @@ A220 I5 D1 H1 P330 E620 W530 J200 C168 Y10 Rxxx M310 F388 U9 Q0 K0
      is the primary MPU port (P is the internal port, needed to upload 
      firmware, but you can swap them playing with P and M values).
   F: FM/OPL Base address. Default is 388. F0 to disable (not all cards allow
-     to disable or change this port!). Accepted values: 388, 398, 3A8, 0.
+     to disable or change this port!). Accepted values: 300 to 3FF, and 0.
      This option is useful, for example, to disable or remap CQM synth in
      SB cards if you use other card with a genuine OPL chip tied to 388,
      or useful for the future "AWE64 Legacy" project, with a genuine OPL.
      Note that a few games (like Dynblaster) will try to use FM synth on
      SB ports 2x0, and it will FM output sound (in SB with CQM for example)
-     anyway. Set FM volume to 0 to avoid it.
+     anyway. Set FM volume to 0 to avoid it. Example values: F398, F3A8...
   U: MPU IRQ (for cards that require it. For cards that don't use a MPU IRQ,
      this parameter will be ignored). It is optional. If not set, best known
      value for each card will be used.
@@ -285,7 +296,7 @@ For other non-PnP cards (only a few selected models), use UNISOUND /NOPNP
 
 
 
-3- Supported cards in the current version (v0.81b):
+3- Supported cards in the current version (v0.82a):
 =============================================================================
 
 Supported PnP Cards
@@ -345,7 +356,7 @@ Aztech:
 
 Rockwell:
 -----------------------------------------------------------------------------
-- RWA01x (WaveArtist) chip cards
+- RWA01x (WaveArtist) chip cards, including special Zoltrix cards with RWA011
 
 
 OPTi:
@@ -377,7 +388,8 @@ AD SoundPort (Analog Devices):
         with some chipset combos, in very rare cases will need to use /FS
         option to be detected correcly.
         
-*Note2: AD ISA cards' WSS mode is NOT compatible with DOS software.
+*Note2: AD ISA cards' WSS mode is NOT compatible with DOS software. It's
+        a design issue on the chips, not an initialization issue. 
 
 
 Advanced Gravis / AMD Interwave / Compaq/STB Ultrasound :
@@ -411,7 +423,7 @@ Turtle Beach:
   Also note that it's possible that your card revision doesn't work at all.
 
 
-Supported non-PnP Cards
+Supported non-PnP Cards (EXPERIMENTAL! Use at your own risk) /NOPNP option
 *****************************************************************************
 - All SB16 and AWE32 non-PnP (software-configurable) cards
   (No need for DIAGNOSE.EXE /S to init!). In AWE32 EMU8K initialization is 
@@ -434,14 +446,25 @@ Supported non-PnP Cards
 - OPTi 82C924/925 in non-PnP mode. Initialization options are the same as
   the PnP versions.
 
+- OPTi 92C930 chip based cards. 
+  Configurable resources: Base Address, IRQ, DMA, MPU port, MPU IRQ, Joyport.
+  No support for CD interface. SB and WSS can be used by default without 
+  having to change mode.
+
 Resource assignments are read from BLASTER env var if present, as usual.
 
 Mixer volume settings compatible with each card are supported as usual with
-/Vxxx options.
+/Vxxx options. Check Usage in section 2.
 
-NOTE: This feature is EXPERIMENTAL. Please, plug only one card in the
-system to avoid problems. Support for more Non-PnP cards is not planned in
-any way in the near future.
+Example: To configure an OPTi 82C930 with IRQ 7, DMA 1, no joyport, and
+         line volume 60%, and FM volume 50%:
+
+        SET BLASTER=A220 I7 D1 J0
+        UNISOUND /NOPNP /VL60 /VF50
+
+NOTE: This feature is *EXPERIMENTAL*. Please, plug only ONE card in the
+system to avoid problems. Support for more Non-PnP cards or more Non-PnP
+features is not planned in any way in the near future.
 
 Option for non-PnP card detection: /NOPNP 
 
@@ -455,7 +478,7 @@ Option for non-PnP card detection: /NOPNP
 
 This card has been added to this tool mainly to be used as a stand alone
 card configured with Classic GUS support or used paired with a Sound Blaster
-(with different resource settings, of course).
+or compatible (with different resource settings, of course).
 Only the Base address (2x0), codec address (3xx), main IRQ and 2 DMAs
 (play-rec) will be configured, the remaining resources will be disabled 
 (Game port, SB emu resources, MPU address. IDE and Joy are optional). 
@@ -485,6 +508,9 @@ very well for old GUS uses like a lot of demoscene demos/intros, games
 like Epic pinball/Silverball... and with the patches folder, with Dark
 forces, Descent... or simply to be paired with a SB and have the full
 experience without crappy emulation.
+
+You can use /XGL EXtended option to limit the RAM to 512K for compatibility 
+with some demos/games, like Absolute Pinball. 
 
 - Since v0.80a, full suport for the GUSPnP compatible Compaq Interwave / STB
   Ultrasound 32 Pro card, including the TEA6330T chip providing TREBLE/BASS
@@ -568,6 +594,18 @@ happens also with original drivers and other PnP tools), so if you try to
 run UNISOUND again after 1st initialization, it will probably hang. This
 includes any interaction (/R , etc..), so run UNISOUND only one time with
 these cards, just in case.
+
+
+*Notes about MK1869 / ES186x cards and AuxB (Wavetable header volume)
+-----------------------------------------------------------------------------
+
+Since v0.82a, AuxB is supported as a separated option. Will work with /VBxx 
+option, like this: If /VBxx is not specified, behaviour is as usual: AuxB is 
+controlled with /VFxx value together with FM and onboard WT. If /VBxx is 
+specified, /VFxx will control FM volume and onboard Wavetable and /VBxx will 
+control AuxB separately. Example uses with MK1869: /VF00 /VB90 will mute 
+onboard WT and will put external WT board to 90% volume. And /VF80 /VB00 will
+mute external WT and will put onboard WT to 80% volume.
 
 
 5- EXtended settings. General or per-card
@@ -674,7 +712,7 @@ be disabled by default when initialized by UNISOUND.
   Beach Malibu cards. (See 5.2)
 
 
-5.5- EXtended settings for GUS PnP and Interwave compatible cards
+5.5- EXtended settings for GUS PnP and AMD Interwave compatible cards
 -----------------------------------------------------------------------------
 
 /XGCn EXtended option to enable GUS PnP IDE port
@@ -694,13 +732,19 @@ be disabled by default when initialized by UNISOUND.
       is not working.
 
 
-5.7- EXtended settings for generic Crystal CS4237
+5.7- EXtended settings for generic/custom Crystal CS4237 cards with Ext OPL
 -----------------------------------------------------------------------------
 
 Like Orpheus option for switching FM/OPL between internal and external:
 
 /XOFi  Switch to internal CrystalFM (default)
 /XOFe  Switch to external Yamaha OPL3 (If external chip is available)
+
+
+5.8- EXtended settings for Rockwell RWA010/RWA011 cards
+-----------------------------------------------------------------------------
+
+/XRU   Try to unmute special cards with external 3D like Zoltrix Radio
 
 
 
@@ -724,6 +768,9 @@ This tool has been tested successfully on several different systems:
 
 5- K6-2 500, DFI K6XV3+ motherboard, VIA chipset, 128Mb RAM PC-100, 
    3 ISA slots, SiS AGP VGA 8Mb
+
+6- A lot more, like P233 with Intel TX chipset, P2 with intel LX chipset,
+   Cyryx 486 DX-40, DX2-80, Intel and AMD 386 SX, TI and CX 586SXLC2,..,...
    
 Notes: The 2 boards with OPTi chipset (386 & 486): high DMAs are not working
 (like with the original drivers of the cards). Cards that allow low DMA
@@ -1204,3 +1251,29 @@ v0.81b
   for SB AWE32/64 cards (Values 00 to 99). Note: This works on AWE cards with
   integrated CQM and with discrete Yamaha OPL / CQM chips, if they're routed
   through the EMU8K chip. Only a few exceptions are not routed, like CT3930.
+
+v0.82a
+-----------------------------------------------------------------------------
+
+- Added support for AuxB volume control on ESS 186x cards using /VBxx (00-99) 
+  Useful for cards like MK1869 which have onboard Wavetable and also a 
+  Wavetable header. If /VBxx is not specified, behaviour is like in previous
+  versions. If /VBxx is specified, /VFxx will control FM volume and onboard
+  Wavetable and /VBxx will control AuxB separately. Example uses with MK1869:
+  /VF00 /VB90 will mute onboard WT and will put external WT board to 90% vol.
+  And /VF80 /VB00 will mute external WT and will put onboard WT to 80% vol.
+- Added support for Rockwell RWA011 cards that remained muted in previous
+  versions (like Zoltrix Radio Max). If detected, they will get unmuted
+  correctly. If your RWA card remains muted, please try with option /XRU
+- Added support for new card variants: ESS Samsung Audio Magic X SAB-3000A,
+  Crystal CS4235 based ID CSC8025 and generic CMI 83xx variants (not tested).
+- Let user change Adlib/OPL/FM port to any port in range 0x300-0x3FF. This
+  will allow, for example, to assign value F380 in BLASTER var to fix the
+  problem with OPTi 931/933 chips not playing adlib sounds when running
+  Win9x after Unisound.
+- Fixed reading OPTi DMA2 different to disabled/4.
+- Fixed CS4232 MIC input control.
+- Added *EXPERIMENTAL* support for Non-PnP OPTi 82C930 based sound cards, 
+  configurable resources: Base Address, IRQ, DMA, MPU port, MPU IRQ, Joyport.
+  Use at your own risk.
+- Implemented ERRORLEVEL on exit. 1 = Card not found/Unknown. 0 = OK/Other.
