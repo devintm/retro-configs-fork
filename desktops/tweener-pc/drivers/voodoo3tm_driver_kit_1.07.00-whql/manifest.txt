@@ -1,0 +1,41 @@
+FileSize Typ Name
+======== === =================================
+  988672 dat 1033.mst
+ 2384384 dat 3dfx Tools.Msi
+ 3843625 dat Data.Cab
+     520 txt ToolsVer.txt
+-------- dir driver9x\
+  441804 dat driver9x\3dfx16v3.drv
+ 1291776 dat driver9x\3dfx32v3.dll
+ 1145968 dat driver9x\3dfxOGL.dll
+ 1105408 dat driver9x\3dfxSpl2.dll
+ 1105408 dat driver9x\3dfxSpl3.dll
+     406 txt driver9x\3dfxdrv.ini
+   19554 dat driver9x\3dfxis16.DLL
+   16386 dat driver9x\3dfxis32.DLL
+  311975 dat driver9x\3dfxv3.vxd
+-------- dir driver9x\Help\
+   23160 dat driver9x\Help\3dfx Voodoo3 Help.Dut
+   21124 dat driver9x\Help\3dfx Voodoo3 Help.Eng
+   24188 dat driver9x\Help\3dfx Voodoo3 Help.Esp
+   23626 dat driver9x\Help\3dfx Voodoo3 Help.Fra
+   23965 dat driver9x\Help\3dfx Voodoo3 Help.Ger
+   26272 dat driver9x\Help\3dfx Voodoo3 Help.Ita
+   23808 dat driver9x\Help\3dfx Voodoo3 Help.Por
+   25697 dat driver9x\Help\3dfx Voodoo3 Help.Swe
+   49152 bin driver9x\Setup.exe
+   25106 dat driver9x\Vgartd.vxd
+   26587 txt driver9x\Voodoo3.inf
+  239104 dat driver9x\glide2x.dll
+  259776 dat driver9x\glide2x.ovl
+  329728 dat driver9x\glide3x.dll
+   73728 bin driver9x\install.exe
+    5833 txt driver9x\license.txt
+  266293 dat driver9x\msvcrt.dll
+   10920 dat driver9x\voodoo3.cat
+   61952 bin install.exe
+ 1489152 bin instmsia.exe
+   86016 bin isetup.exe
+    3900 txt readme.txt
+   61440 bin setup.exe
+   61765 txt setup.ini

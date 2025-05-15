@@ -1,0 +1,23 @@
+3dfx Tools Version Information (2.6.2.116)
+
+Generated : 21 Nov 2000 15:16:19
+
+
+3dfxInst.dll 	2.1.1.109
+3dfxCmn.dll 	2.1.10.138
+3dfxCpa.cpl 	2.1.3.120
+3dfxMan.exe 	2.1.9.139
+3dfxHub.exe 	2.1.1.109
+Base.dll 	2.1.0.104
+RegCtrl95.dll 	2.1.1.106
+RegCtrl98.dll 	2.1.0.104
+RegCtrlNT.dll 	2.1.1.106
+RegCtrl2K.dll 	2.1.1.106
+StanRes.dll 	2.1.0.104
+AdvTweak.dll 	2.1.6.138
+TVOut.dll 	2.1.2.114
+InfoPage.dll 	2.1.1.116
+Color.dll 	2.1.3.140
+Feature.dll 	2.1.12.145
+3dfxClk.dll 	2.1.3.118
+Setup.exe 	1.0.0.001

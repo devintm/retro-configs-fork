@@ -32,7 +32,7 @@ A piezo is added virtual motor sounds. Jumpers are placed on JC and S1 to select
 
 * Intel Pentium III 1300Mhz 133Mhz FSB 
 * * Socket 370 (FC-PGA)
-* * **500 Mhz actual** as BIOS does not recognise multiplier higher than 5.0x and bus speed capped at 100Mhz for Voodoo compatibility.
+* * **667 Mhz actual** as BIOS does not recognise multiplier higher than 5.0x.
 * Asus CUV4X motherboard
 * * VIA ProSavage chipset
 * * 2x USB 1 
@@ -50,11 +50,12 @@ A piezo is added virtual motor sounds. Jumpers are placed on JC and S1 to select
 
 <img src="photos/tweener-gfx-front.jpg" width="500">
 
-ATI Rage 128 Ultra AGP. The drivers for this particular board needs 4.13.01.8006 (Beta) as the official ATI drivers do not seem to support it.
+<img src="photos/tweener-gfx-with-box.jpg" width="500">
 
-<img src="photos/tweener-voodoo-graphics-front.jpg" width="500">
+Voodoo Witch AGP 16MB Matte Black (3dfx Voodoo3 3500 alike). What a beautifully designed box.
 
-Diamond 3Dfx Voodoo 1 Graphics
+Bought from [here](https://www.zxc64.com/video_cards/0_62948_voodoo_witch_agp_16mb_matte_black_3dfx_voodoo3_3500_alike/)
+
 
 <img src="photos/tweener-network-card.jpg" width="500">
 
@@ -151,6 +152,5 @@ I flashed the latest stable BIOS Version 1009 dated
 2. [LSI 53C1010 x86 drivers](ftp://ftp.tyan.com/SCSI/LSI1010/111700/LSI1010.exe)
 3. [LSI 53C1010 x64 drivers](http://www.edugeek.net/forums/windows-7/96515-windows-7-x64-drivers-lsi-20160-scsi-adaptor.html)
 4. [BIOS sources](https://www.asus.com/supportonly/CUV4X/HelpDesk_BIOS/)
-5. [ATI Rage 128 beta drivers](https://soggi.org/drivers/ati.htm)
-6. [Voodoo Graphics Iceman drivers](https://www.philscomputerlab.com/drivers-for-voodoo.html)
-7. [3dfx MiniGL drivers](http://falconfly.3dfx.pl/minigl.htm)
+5. [Voodoo 3 drivers](https://www.philscomputerlab.com/drivers-for-voodoo-3.html)
+6. [3dfx MiniGL drivers](http://falconfly.3dfx.pl/minigl.htm)
