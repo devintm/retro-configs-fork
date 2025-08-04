@@ -65,6 +65,10 @@ The card has been configured to be jumperless with the utility used to set the r
 
 AP138B Parallel Port card
 
+<img src="photos/5155-pico-psu-adaptor.jpg" width="500">
+
+[PicoPSU Adaptor for IBM PCs](https://github.com/dekuNukem/PicoRC/blob/master/ibm5155.md) as the original PSU on this system has failed. Purchased from [here](https://www.tindie.com/products/dekunukem/picopsu-adaptor-for-ibm-5155-ibm-pc-compatibles/). Using 120W PicoPSU.
+
 ### Comparison with original CGA card
 
 <img src="photos/5155-cga-gremlin-top.jpg" width="500">
