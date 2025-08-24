@@ -19,7 +19,7 @@ These are the specifications of this modern machine.
 * AMD Ryzen 5 7600 3.8Ghz AM5 socket
 * Asus Dual GeForce RTX 4060 Ti EVO OC 16GB
 * ASUS Pro B650M-CT-CSM motherboard
-* 2x32GB DDR5-5600 CL36 Kingston Fury
+* 128GB: 4x32GB DDR5-5600 CL36 Kingston Fury (DDR5-3600 actual)
 * Coolermaster Hyper 212 Spectrum V3 CPU cooler
 * 1TB NVME Crucial T500
 * 2.5GbE RTL8125 PCIe x1
