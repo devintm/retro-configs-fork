@@ -22,6 +22,7 @@ These are the specifications of this modern machine.
 * 2x32GB DDR5-5600 CL36 Kingston Fury
 * Coolermaster Hyper 212 Spectrum V3 CPU cooler
 * 1TB NVME Crucial T500
+* 2.5GbE RTL8125 PCIe x1
 * Intel Wi-Fi 6E AX210 160Mhz
 * From previous build
     * Seasonic S12II 520W PSU (non-modular)
