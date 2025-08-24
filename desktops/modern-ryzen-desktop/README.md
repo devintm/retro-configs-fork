@@ -22,6 +22,7 @@ These are the specifications of this modern machine.
 * 2x32GB DDR5-5600 CL36 Kingston Fury
 * Coolermaster Hyper 212 Spectrum V3 CPU cooler
 * 1TB NVME Crucial T500
+* Intel Wi-Fi 6E AX210 160Mhz
 * From previous build
     * Seasonic S12II 520W PSU (non-modular)
     * Coolermaster N400 midtower ATX case
@@ -48,6 +49,10 @@ Xircom PE3 connected to a native parallel port.
 <img src="photos/ryzendos-legacy-ports.jpg" width="500">
 
 Motherboard provides native serial and parallel port. A native parallel port is almost unheard of for a desktop motherboard that is this modern
+
+<img src="photos/ryzendos-pcie-extender.jpg" width="500">
+
+A PCIe extender is used to utilise a PCIe x1 slot blocked by the GPU so the sound card can be used.
 
 <img src="photos/ryzendos-rear-floppy.jpg" width="500">
 
